@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/rockmedia.png">
+    <title>Gifted Hands Registration Form</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="preloader-style.css">
+</head>
+
+<body class="">
+    <style>
+        body {
+            font-family: "Poppins";
+            font-size: 0.5em;
+            background-color: #f5fff6;
+        }
+        
+        iframe {
+            height: 100vh;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        
+        .example::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        
+        .example {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+        
+        #banner {
+            /* position: sticky;
+            top: 0; */
+            z-index: 100;
+            /* overflow-y: scroll; */
+        }
+        
+        #page-content {
+            display: none;
+        }
+    </style>
+    <!-- PRE LOADER -->
+    <div class="overflow white" id="preload">
+        <!-- add dark/white classname to change background-->
+        <div class="circle-line">
+            <div class="circle-red">&nbsp;</div>
+            <div class="circle-blue">&nbsp;</div>
+            <div class="circle-green">&nbsp;</div>
+            <div class="circle-yellow">&nbsp;</div>
+        </div>
+    </div>
+    <!-- END PRE LOADER -->
+
+    <div class="container-fluid" id="page-content">
+        <div class="row justify-content-center my-2 rounded p-2">
+            <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-12 mt-3 mb-2 text-center" id="banner">
+                        <!-- <p class="h1 text-light bg-primary p-3 my-3 text-center">Hello Wolrd</p> -->
+                        <img src="img/banner-copy.jpg" class="img-fluid rounded shadow" alt="">
+                    </div>
+                </div>
+                <!-- <div class="col-md-12 my-5">hello</div>
+                <div class="col-md-12 my-5">hello</div> -->
+
+                <div class="row mt-0">
+                    <div class="col-sm-12 my-3 example embed-responsive embed-responsive-16by9" style="height: 100vh !important; width: 100vw;" id="myFrame">
+                        <!-- <iframe class="embed-responsive-item" src="https://docs.google.com/forms/d/e/1FAIpQLScMvAbipT2m4s2hmQ4CRax-j0JHJ4kao8izqLmr_LxDBHbhwQ/viewform?embedded=true" width="1040" height="2899" frameborder="0" scrolling=""></iframe> -->
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-12 text-center">
+                        <a href="https://chat.whatsapp.com/FB8dlcwh2Cq2qvpJcKlmYA" class="btn btn-sm text-white p-2 font-weight-bold" style="background-color: #1b7c6b;">
+                            <i class="fa fa-whatsapp"></i> Group Chat Invite</a>
+                    </div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-12 text-center">
+                        <p class="h6">
+                            <span class="bg-dark py-2 px-5 rounded-pill text-light">powered by: <i class="fa fa-whatsapp text-primary"></i> <a href="https://www.facebook.com/apapayouthcouncil" target="_blank" style="text-decoration: none;">PYC - Apapa</a></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+
+            var iframe = document.createElement("iframe");
+            iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLScQjAazLHX5EqC9PIbHgWmuZoajOg9CIQHOacMxmpw3pytZfg/viewform?embedded=true";
+            iframe.setAttribute("frameborder", "0")
+            iframe.classList.add("embed-responsive-item")
+
+            if (iframe.attachEvent) {  
+                iframe.attachEvent("onload", function() {  
+                    $('#preload').hide(2000, "linear", showContent)
+                    alert("Local iframe is now loaded. 123");  
+                });
+            } else {  
+                iframe.onload = function() {
+                    $('#preload').hide(2000, "linear", showContent)
+                    alert("Local iframe is now loaded.");  
+                };
+            }
+            document.getElementById('myFrame').appendChild(iframe);
+
+            console.log($('.exportLabel'))
+            $('.exportLabel').click((e) => {
+                alert('hello')
+            })
+
+            function showContent() {
+                $('#page-content').show()
+
+            }
+        })
+    </script>
+</body>
+
+</html>
