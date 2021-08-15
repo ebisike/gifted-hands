@@ -113,20 +113,15 @@
             if (iframe.attachEvent) {  
                 iframe.attachEvent("onload", function() {  
                     $('#preload').hide(2000, "linear", showContent)
-                    alert("Local iframe is now loaded. 123");  
+                        //alert("Local iframe is now loaded. 123");  
                 });
             } else {  
                 iframe.onload = function() {
                     $('#preload').hide(2000, "linear", showContent)
-                    alert("Local iframe is now loaded.");  
+                        //alert("Local iframe is now loaded.");  
                 };
             }
             document.getElementById('myFrame').appendChild(iframe);
-
-            console.log($('.exportLabel'))
-            $('.exportLabel').click((e) => {
-                alert('hello')
-            })
 
             function showContent() {
                 $('#page-content').show()
