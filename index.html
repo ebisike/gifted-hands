@@ -66,12 +66,12 @@
     <!-- END PRE LOADER -->
 
     <div class="container-fluid" id="page-content">
-        <div class="row justify-content-center my-2 rounded p-2">
+        <div class="row justify-content-center my-2 rounded">
             <div class="col-sm-8">
                 <div class="row">
                     <div class="col-sm-12 mt-3 mb-2 text-center" id="banner">
                         <!-- <p class="h1 text-light bg-primary p-3 my-3 text-center">Hello Wolrd</p> -->
-                        <img src="img/banner-copy.jpg" class="img-fluid rounded shadow" alt="">
+                        <img src="img/banner-copy.jpg" class="img-fluid rounded shadow" alt="program banner">
                     </div>
                 </div>
                 <!-- <div class="col-md-12 my-5">hello</div>
@@ -83,14 +83,14 @@
                     </div>
                 </div>
                 <div class="row my-2">
-                    <div class="col-md-12 text-center">
+                    <div class="col-md-12 text-center" id="whatsapp">
                         <a href="https://chat.whatsapp.com/FB8dIcwh2Cq2qvpJcKlmYA" class="btn btn-sm text-white p-2 font-weight-bold" style="background-color: #1b7c6b;"><i class="fa fa-whatsapp"></i> Group Invite</a>
                     </div>
                 </div>
                 <div class="row py-2">
                     <div class="col-md-12 text-center">
                         <p class="h6">
-                            <span class="bg-dark py-2 px-5 rounded-pill text-light">powered by: <i class="fa fa-facebook-square text-primary"></i> <a href="https://www.facebook.com/apapayouthcouncil" target="_blank" style="text-decoration: none;">PYC - Apapa</a></span>
+                            <span class="bg-dark py-2 px-3 rounded-pill text-light m-0">powered by: <i class="fa fa-facebook-square text-primary"></i> <a href="https://www.facebook.com/apapayouthcouncil" target="_blank" style="text-decoration: none;">PYC - Apapa</a></span>
                         </p>
                     </div>
                 </div>
@@ -104,27 +104,39 @@
     <script>
         $(document).ready(function() {
 
-            var iframe = document.createElement("iframe");
-            iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLScQjAazLHX5EqC9PIbHgWmuZoajOg9CIQHOacMxmpw3pytZfg/viewform?embedded=true";
-            iframe.setAttribute("frameborder", "0")
-            iframe.classList.add("embed-responsive-item")
-
-            if (iframe.attachEvent) {  
-                iframe.attachEvent("onload", function() {  
-                    $('#preload').hide(2000, "linear", showContent)
-                        //alert("Local iframe is now loaded. 123");  
-                });
-            } else {  
-                iframe.onload = function() {
-                    $('#preload').hide(2000, "linear", showContent)
-                        //alert("Local iframe is now loaded.");  
-                };
-            }
-            document.getElementById('myFrame').appendChild(iframe);
+            create_iframe()
+                // $('#google-form').on('load', function() {
+                //     //alert('frame has (re)loaded ');
+                //     if (count === 2) {
+                //         $('#whatsapp').show()
+                //     }
+                // });
 
             function showContent() {
                 $('#page-content').show()
 
+            }
+
+            function create_iframe() {
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://docs.google.com/forms/d/e/1FAIpQLScQjAazLHX5EqC9PIbHgWmuZoajOg9CIQHOacMxmpw3pytZfg/viewform?embedded=true";
+                iframe.setAttribute("frameborder", "0")
+                iframe.setAttribute("id", "google-form")
+                iframe.classList.add("embed-responsive-item")
+                    //let count = 1
+                if (iframe.attachEvent) {  
+                    iframe.attachEvent("onload", function() {  
+                        $('#preload').hide(2000, "linear", showContent)
+                            //alert("Local iframe is now loaded. 123");  
+                    });
+                } else {  
+                    iframe.onload = function() {
+                        $('#preload').hide(2000, "linear", showContent)
+                            //alert("Local iframe is now loaded.");  
+                    };
+                }
+                //count++
+                document.getElementById('myFrame').appendChild(iframe);
             }
         })
     </script>
