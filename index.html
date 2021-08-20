@@ -52,6 +52,10 @@
         #page-content {
             display: none;
         }
+        
+        .msg-alert {
+            font-size: 100px;
+        }
     </style>
     <!-- PRE LOADER -->
     <div class="overflow white" id="preload">
@@ -77,14 +81,21 @@
                 <!-- <div class="col-md-12 my-5">hello</div>
                 <div class="col-md-12 my-5">hello</div> -->
 
-                <div class="row mt-0">
+                <div class="row mt-0 hide-form">
                     <div class="col-sm-12 my-3 example embed-responsive embed-responsive-16by9" style="height: 100vh !important; width: 100vw;" id="myFrame">
                         <!-- <iframe class="embed-responsive-item" src="https://docs.google.com/forms/d/e/1FAIpQLScMvAbipT2m4s2hmQ4CRax-j0JHJ4kao8izqLmr_LxDBHbhwQ/viewform?embedded=true" width="1040" height="2899" frameborder="0" scrolling=""></iframe> -->
                     </div>
                 </div>
-                <div class="row my-2">
+                <div class="row my-2 hide-form">
                     <div class="col-md-12 text-center" id="whatsapp">
                         <a href="https://chat.whatsapp.com/FB8dIcwh2Cq2qvpJcKlmYA" class="btn btn-sm text-white p-2 font-weight-bold" style="background-color: #1b7c6b;"><i class="fa fa-whatsapp"></i> Group Invite</a>
+                    </div>
+                </div>
+                <div class="row my-2">
+                    <div class="col-md-12 text-center">
+                        <p class="msg-alert">Oops!</p>
+                        <p class="h2 p-3 bg-danger text-light m-2">sorry we've stopped accepting responses</p>
+                        <p class="h4">you can contact your parish president for further assistance.</p>
                     </div>
                 </div>
                 <div class="row py-2">
@@ -114,6 +125,7 @@
 
             function showContent() {
                 $('#page-content').show()
+                $('.hide-form').hide()
 
             }
 
